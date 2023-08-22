@@ -1,23 +1,21 @@
 const sizeCube = 50; // Размеры кубов px
 const mobileSizeCube = 30; // Размер кубов на мобильных устройствах
-const speedRotate = 2; // Скорость вращения
+const speedRotate = 1; // Скорость вращения
 const countRotate = 32; // Количесво оборотов при перемешивании
 const timeRotate = 3; // Время (секунды) вращения при перемешивании
 const timeWaitMove = 2; // Время (секунды) ожидания перемещения после результата выпадения 
 
 // [значения сторон кубиков, вероятность выпадения(чем больше, тем чаще), ссылка]
 const variants = {
-    1: ['1 1 1', 1, 'https://google.com'],
-    2: ['2 1 2', 1, 'https://google.com'],
-    3: ['1 1 3', 1, 'https://google.com'],
-    4: ['1 5 4', 1, 'https://google.com'],
-    5: ['1 1 5', 1, 'https://google.com'],
-    6: ['1 1 6', 1, 'https://google.com'],
-    7: ['2 1 1', 1, 'https://google.com'],
-    8: ['1 3 1', 4, 'https://google.com']
+    1: ['1 1 1', 1, ''],
+    2: ['2 1 2', 1, ''],
+    3: ['1 1 3', 1, ''],
+    4: ['1 5 4', 1, ''],
+    5: ['1 1 5', 1, ''],
+    6: ['1 1 6', 1, ''],
+    7: ['2 1 1', 1, ''],
+    8: ['1 3 1', 4, '']
 }
-
-
 
 
 let sides = document.querySelectorAll('.side');
@@ -35,6 +33,8 @@ let text = document.querySelector('.cube-block__text');
 
 let sideImgs = document.querySelectorAll('.side-img');
 
+
+// Изменяет размер кубов
 function changeSizeCube(sizeCube) {
     container.style.width = sizeCube * 4.2 + 'px';
     cubeContainer.style.marginTop = sizeCube - 8 + 'px';
@@ -121,7 +121,8 @@ function normalizeRotaion(x, y, z, cube) {
 
 function waitMove(url) {
     setTimeout(() => {
-        window.location.href = url;
+        //window.location.href = url;
+        animateRotation()
     }, (timeWaitMove + timeRotate) * 1000)
 }
 

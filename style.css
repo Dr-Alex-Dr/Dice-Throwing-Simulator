@@ -3,7 +3,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ccc;
+    background-color: #e5f4ff;
 }
 
 .cube-container {
@@ -73,14 +73,14 @@ transform: translateX(-50%) rotateY(90deg) scale(1, -1);
   position: absolute;
 }
 .cube-block__text {
-  color: #fff;
+  color: #000;
   text-align: center;
   font-family: Inter;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-top: 22px;
+  margin-top: 26px;
   opacity: 0;
   transition: all 0.3s ease-in-out;
 }
